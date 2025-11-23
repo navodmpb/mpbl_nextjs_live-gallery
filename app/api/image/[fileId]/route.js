@@ -1,6 +1,10 @@
 import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
 
+// ⚠️ CRITICAL: Disable caching for real-time image updates
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // Initialize Google Drive
 function getDrive() {
   const auth = new google.auth.GoogleAuth({
